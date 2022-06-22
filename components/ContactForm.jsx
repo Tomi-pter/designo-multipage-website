@@ -41,6 +41,22 @@ const ContactSect = styled(HeadSect)`
     padding: 0.75em 1em;
     width: 150px;
   }
+
+  @media screen and (min-width: 641px) {
+    article {
+      max-width: 80%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin: 0 0 1.5em;
+      }
+    }
+    button {
+      align-self: flex-end;
+    }
+  }
 `;
 
 function ContactForm() {
