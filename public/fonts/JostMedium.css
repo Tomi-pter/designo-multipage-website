@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'JostMedium';
+    src: url('fonts/JostMedium.eot');
+    src: url('fonts/JostMedium.eot') format('embedded-opentype'),
+         url('fonts/JostMedium.woff2') format('woff2'),
+         url('fonts/JostMedium.woff') format('woff'),
+         url('fonts/JostMedium.ttf') format('truetype'),
+         url('fonts/JostMedium.svg#JostMedium') format('svg');
+}

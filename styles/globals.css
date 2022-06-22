@@ -1,16 +1,89 @@
+@font-face {
+    font-family: 'JostMedium';
+    src: url('../public/fonts/JostMedium.eot');
+    src: url('../public/fonts/JostMedium.eot') format('embedded-opentype'), url('../public/fonts/JostMedium.woff2') format('woff2'), url('../public/fonts/JostMedium.woff') format('woff'), url('../public/fonts/JostMedium.ttf') format('truetype'), url('../public/fonts/JostMedium.svg#JostMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'JostRegular';
+    src: url('../public/fonts/JostRegular.eot');
+    src: url('../public/fonts/JostRegular.eot') format('embedded-opentype'), url('../public/fonts/JostRegular.woff2') format('woff2'), url('../public/fonts/JostRegular.woff') format('woff'), url('../public/fonts/JostRegular.ttf') format('truetype'), url('../public/fonts/JostRegular.svg#JostRegular') format('svg');
+}
+
+:root {
+    --peach: hsl(11, 73%, 66%);
+    /* --peach: #e88069; */
+    --black: hsl(270, 3%, 11%);
+    /* --black: #1c1b1d; */
+    --white: hsl(0, 0%, 100%);
+    --light-peach: hsl(11, 100%, 80%);
+    /* --light-peach: #ffac99; */
+    --dark-grey: hsl(264, 5%, 20%);
+    /* --dark-grey: #323036; */
+    --light-grey: hsl(210, 17%, 95%);
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.frame {
+    position: absolute;
+    top: 22rem;
+}
+
+.web {
+    background: url('../public/assets/home/mobile/image-web-design.jpg') no-repeat 100%/100%;
+}
+
+.app {
+    background: url('../public/assets/home/mobile/image-app-design.jpg') no-repeat 100%/100%;
+}
+
+.graphic {
+    background: url('../public/assets/home/mobile/image-graphic-design.jpg') no-repeat 100%/100%;
+}
+
+.traitDiv {
+    width: 202px;
+    height: 202px;
+    margin: auto;
+    background: url('../public/assets/home/desktop/bg-pattern-hero-home.svg') no-repeat center 100%/100%;
+}
+
+.traitImg {
+    width: 188px;
+    height: 162px;
+}
+
+@media screen and (min-width: 641px) {
+    .frame {
+        top: 21rem;
+    }
+    .web {
+        background: url('../public/assets/home/tablet/image-web-design.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .app {
+        background: url('../public/assets/home/tablet/image-app-design.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .graphic {
+        background: url('../public/assets/home/tablet/image-graphic-design.jpg') no-repeat center;
+        background-size: cover;
+    }
 }

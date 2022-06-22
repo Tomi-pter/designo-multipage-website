@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'JostRegular';
+    src: url('fonts/JostRegular.eot');
+    src: url('fonts/JostRegular.eot') format('embedded-opentype'),
+         url('fonts/JostRegular.woff2') format('woff2'),
+         url('fonts/JostRegular.woff') format('woff'),
+         url('fonts/JostRegular.ttf') format('truetype'),
+         url('fonts/JostRegular.svg#JostRegular') format('svg');
+}
