@@ -144,6 +144,8 @@ const FootAction = styled.aside`
   }
 
   @media screen and (min-width: 641px) {
+    top: -7em;
+
     div {
       max-width: 65%;
       padding: 3em 0 0.5em;
