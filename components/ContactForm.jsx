@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import ViewLocation from "./ViewLocation";
 import { HeadSect } from "./WebDesign";
@@ -60,12 +59,6 @@ const ContactSect = styled(HeadSect)`
 `;
 
 function ContactForm() {
-  useEffect(() => {
-    document.querySelector(".footaction").style.display = "none";
-    document.querySelector(".foot").style.marginTop = 0;
-    document.querySelector(".footer").style.paddingTop = "4rem";
-  }, []);
-
   return (
     <>
       <ContactSect>

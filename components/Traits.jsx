@@ -33,7 +33,7 @@ export const Trait = styled.section`
   }
 
   @media screen and (min-width: 641px) {
-    max-width: 90%;
+    max-width: 100%;
 
     article {
       display: flex;

@@ -131,8 +131,10 @@ const FootAction = styled.aside`
     }
   }
 
-  button {
+  button,
+  a {
     font-family: "JostMedium";
+    display: inline-block;
     font-size: 0.93em;
     text-transform: uppercase;
     background-color: var(--white);
@@ -154,6 +156,10 @@ const FootAction = styled.aside`
       margin: 2em 0 3em;
     }
   }
+
+  @media screen and (min-width: 1008px) {
+    max-width: clamp(882px, 87.5%, 1440px);
+  }
 `;
 
 function Footer({ children }) {
@@ -169,7 +175,9 @@ function Footer({ children }) {
               how our expertise can help your business grow.
             </p>
           </div>
-          <button>Get in touch</button>
+          <Link href="/contact">
+            <a>Get in touch</a>
+          </Link>
         </FootAction>
         <section className="footer">
           <div className="footNav">

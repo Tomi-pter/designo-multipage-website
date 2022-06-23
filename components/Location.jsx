@@ -34,7 +34,7 @@ const ImageSect = styled.div`
   }
 
   @media screen and (min-width: 641px) {
-    margin: 2em 1.5em;
+    margin: 2em 0;
     border-radius: 0.93em;
     overflow: hidden;
   }

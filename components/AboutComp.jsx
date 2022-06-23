@@ -41,7 +41,7 @@ const PeachSect = styled.section`
   }
 
   @media screen and (min-width: 641px) {
-    margin: 2em 1.5em 7.5em;
+    margin: 2em 0 7.5em;
     border-radius: 0.93em;
 
     .img {

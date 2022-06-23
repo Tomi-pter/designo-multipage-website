@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import styled from "styled-components";
 import HomeComp from "../components/HomeComp";
 import Services from "../components/Services";
@@ -10,6 +11,12 @@ const New = styled.div`
 `;
 
 export default function Home() {
+  useEffect(() => {
+    document.querySelector(".footaction").style.display = "unset";
+    document.querySelector(".foot").style.marginTop = "15.5em";
+    document.querySelector(".footer").style.paddingTop = "16rem";
+  }, []);
+
   return (
     <>
       <Head>

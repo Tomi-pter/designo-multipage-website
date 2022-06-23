@@ -30,6 +30,7 @@ export const ServiceSection = styled.section`
   }
 
   @media screen and (min-width: 641px) {
+    margin: 1.5em 0;
     div {
       padding: 4.1em 1.5em;
     }
@@ -41,7 +42,7 @@ function Services({ specific }) {
 
   return (
     <>
-      <Link href={link}>
+      <Link href={link} passHref>
         <a>
           <ServiceSection className={specific}>
             <div>

@@ -30,7 +30,7 @@ export const HeadSect = styled.section`
 
   @media screen and (min-width: 641px) {
     height: 252px;
-    margin: 0.5em 1.5em 7.5em;
+    margin: 0.5em 0 7.5em;
     border-radius: 0.93em;
 
     article {
@@ -59,6 +59,7 @@ export const WorksSect = styled(LightSect)`
   @media screen and (min-width: 641px) {
     display: flex;
     height: 310px;
+    max-width: 100%;
 
     article {
       width: 50%;

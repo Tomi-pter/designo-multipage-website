@@ -4,9 +4,10 @@ import canada from "../public/assets/shared/desktop/illustration-canada.svg";
 import australia from "../public/assets/shared/desktop/illustration-australia.svg";
 import uk from "../public/assets/shared/desktop/illustration-united-kingdom.svg";
 import { Trait } from "./Traits";
+import Link from "next/link";
 
 const AboutTrait = styled(Trait)`
-  margin: 7.5rem auto;
+  margin: 7.5rem 0;
 
   article {
     padding-bottom: 0;
@@ -18,7 +19,8 @@ const AboutTrait = styled(Trait)`
     padding-bottom: 0;
   }
 
-  button {
+  button,
+  a {
     font-family: "JostMedium";
     font-size: 0.93em;
     text-transform: uppercase;
@@ -59,7 +61,9 @@ function ViewLocation() {
           </div>
           <div className="text">
             <h2>Canada</h2>
-            <button>See location</button>
+            <Link href="/locations">
+              <a>See location</a>
+            </Link>
           </div>
           <div className="traitDiv">
             <Image
@@ -72,7 +76,9 @@ function ViewLocation() {
           </div>
           <div className="text">
             <h2>Australia</h2>
-            <button>See location</button>
+            <Link href="/locations">
+              <a>See location</a>
+            </Link>
           </div>
           <div className="traitDiv">
             <Image
@@ -85,7 +91,9 @@ function ViewLocation() {
           </div>
           <div className="text">
             <h2>United Kingdom</h2>
-            <button>See location</button>
+            <Link href="/locations">
+              <a>See location</a>
+            </Link>
           </div>
         </article>
       </AboutTrait>
