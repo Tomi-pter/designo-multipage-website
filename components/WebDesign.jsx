@@ -63,7 +63,55 @@ export const WorksSect = styled(LightSect)`
 
     article {
       width: 50%;
-      padding: 6em 3em;
+      padding: 6em 0;
+    }
+  }
+
+  @media screen and (min-width: 641px) and (max-width: 1007px) {
+    .img {
+      height: 310px;
+      width: 339px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0.93em;
+    }
+  }
+
+  @media screen and (min-width: 1008px) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    && article {
+      width: 100%;
+      max-width: 67.5%;
+      height: 40%;
+      padding: 2em 0;
+      text-align: center;
+    }
+    &:nth-child(2) {
+      flex-direction: column;
+    }
+  }
+`;
+
+export const WorksContainer = styled.section`
+  @media screen and (min-width: 1008px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 478px;
+    gap: 2em;
+    margin-bottom: 4em;
+  }
+`;
+
+export const ServicesContainer = styled.section`
+  @media screen and (min-width: 1008px) {
+    display: flex;
+    gap: 2em;
+    padding-top: 4em;
+
+    a {
+      width: 100%;
     }
   }
 `;
@@ -85,17 +133,25 @@ function WebDesign() {
         </article>
       </HeadSect>
       <BigSpace />
-      {webData.map(({ name, src, desc, id }) => (
-        <WorksSect key={id}>
-          <div className="img">
-            <Image src={src} alt="" width={340} height={310} />
-          </div>
-          <article>
-            <h2>{name}</h2>
-            <p>{desc}</p>
-          </article>
-        </WorksSect>
-      ))}
+      <WorksContainer>
+        {webData.map(({ name, src, desc, id }) => (
+          <WorksSect key={id}>
+            <div className="img">
+              <Image
+                src={src}
+                alt=""
+                width={340}
+                height={310}
+                layout="responsive"
+              />
+            </div>
+            <article>
+              <h2>{name}</h2>
+              <p>{desc}</p>
+            </article>
+          </WorksSect>
+        ))}
+      </WorksContainer>
       <BigSpace />
     </>
   );

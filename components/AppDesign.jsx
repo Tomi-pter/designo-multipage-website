@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { appData } from "../data/appData";
-import { BigSpace, HeadSect, WorksSect } from "./WebDesign";
+import { BigSpace, HeadSect, WorksContainer, WorksSect } from "./WebDesign";
 
 function AppDesign() {
   return (
@@ -15,17 +15,25 @@ function AppDesign() {
         </article>
       </HeadSect>
       <BigSpace />
-      {appData.map(({ name, src, desc, id }) => (
-        <WorksSect key={id}>
-          <div className="img">
-            <Image src={src} alt="" width={340} height={310} />
-          </div>
-          <article>
-            <h2>{name}</h2>
-            <p>{desc}</p>
-          </article>
-        </WorksSect>
-      ))}
+      <WorksContainer>
+        {appData.map(({ name, src, desc, id }) => (
+          <WorksSect key={id}>
+            <div className="img">
+              <Image
+                src={src}
+                alt=""
+                width={340}
+                height={310}
+                layout="responsive"
+              />
+            </div>
+            <article>
+              <h2>{name}</h2>
+              <p>{desc}</p>
+            </article>
+          </WorksSect>
+        ))}
+      </WorksContainer>
       <BigSpace />
     </>
   );

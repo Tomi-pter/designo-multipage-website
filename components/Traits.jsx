@@ -50,6 +50,25 @@ export const Trait = styled.section`
       margin-bottom: 2em;
     }
   }
+
+  @media screen and (min-width: 1008px) {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+
+    article {
+      display: flex;
+      flex-direction: column;
+    }
+    .text {
+      max-width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+    .traitDiv {
+      margin: auto;
+    }
+  }
 `;
 
 function Traits() {

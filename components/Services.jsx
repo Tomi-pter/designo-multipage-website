@@ -8,6 +8,7 @@ export const ServiceSection = styled.section`
   margin: 1.5rem 1.5em;
   border-radius: 1em;
   overflow: hidden;
+  /* grid-area: ${(props) => props.specific}; */
 
   & div {
     padding: 5.625em 1.5em;
@@ -35,6 +36,20 @@ export const ServiceSection = styled.section`
       padding: 4.1em 1.5em;
     }
   }
+
+  @media screen and (min-width: 1008px) {
+    margin: 0;
+    height: 100%;
+
+    div {
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+  }
 `;
 
 function Services({ specific }) {
@@ -43,7 +58,7 @@ function Services({ specific }) {
   return (
     <>
       <Link href={link} passHref>
-        <a>
+        <a style={{ gridArea: specific }}>
           <ServiceSection className={specific}>
             <div>
               <h2>{specific} Design</h2>

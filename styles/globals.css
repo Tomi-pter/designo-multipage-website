@@ -87,3 +87,23 @@ button {
         background-size: cover;
     }
 }
+
+@media screen and (min-width: 1008px) {
+    .frame {
+        top: 25%;
+        right: -238px;
+        transform: translate(-80%, -17.5%);
+    }
+    .web {
+        background: url('../public/assets/home/desktop/image-web-design-large.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .app {
+        background: url('../public/assets/home/desktop/image-app-design.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .graphic {
+        background: url('../public/assets/home/desktop/image-graphic-design.jpg') no-repeat center;
+        background-size: cover;
+    }
+}

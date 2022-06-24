@@ -60,6 +60,42 @@ const PeachSect = styled.section`
       display: none;
     }
   }
+
+  @media screen and (min-width: 1008px) {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 480px;
+
+    &:nth-child(2) {
+      flex-direction: row;
+
+      .desk {
+        border-top-left-radius: 0.93em;
+        border-bottom-left-radius: 0.93em;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    article {
+      max-width: 40%;
+      margin: auto;
+      text-align: left;
+    }
+
+    .mob,
+    .tab {
+      display: none;
+    }
+    .desk {
+      display: unset;
+      width: 476px;
+      height: 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0.93em;
+      border-bottom-right-radius: 0.93em;
+    }
+  }
 `;
 
 export const LightSect = styled(PeachSect)`
@@ -70,6 +106,10 @@ export const LightSect = styled(PeachSect)`
   }
   p {
     color: var(--dark-grey);
+  }
+
+  @media screen and (min-width: 1008px) {
+    height: 640px;
   }
 `;
 

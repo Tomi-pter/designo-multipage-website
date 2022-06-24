@@ -8,7 +8,7 @@ import twitter from "../public/assets/shared/desktop/icon-twitter.svg";
 import pinterest from "../public/assets/shared/desktop/icon-pinterest.svg";
 import instagram from "../public/assets/shared/desktop/icon-instagram.svg";
 
-const Foot = styled.footer`
+const Foot = styled.section`
   margin-top: 19.5em;
   background-color: var(--black);
   position: relative;
@@ -70,7 +70,9 @@ const Foot = styled.footer`
   }
 
   @media screen and (min-width: 641px) {
-    margin-top: 14.5em;
+    max-width: 90%;
+    margin: 14.5em auto 0;
+    padding: 2.15rem 0;
 
     .footNav {
       flex-direction: row;
@@ -97,6 +99,12 @@ const Foot = styled.footer`
     .socials {
       align-self: flex-end;
     }
+  }
+  @media screen and (min-width: 1008px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 87.5%;
+    max-width: clamp(882px, 87.5%, 1440px);
   }
 `;
 
@@ -159,6 +167,19 @@ const FootAction = styled.aside`
 
   @media screen and (min-width: 1008px) {
     max-width: clamp(882px, 87.5%, 1440px);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      max-width: 60%;
+      margin: 0;
+      padding: 5em;
+    }
+    a {
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -166,75 +187,87 @@ function Footer({ children }) {
   return (
     <>
       {children}
-      <Foot className="foot">
-        <FootAction className="footaction">
-          <div>
-            <h2>Let’s talk about your project</h2>
-            <p>
-              Ready to take it to the next level? Contact us today and find out
-              how our expertise can help your business grow.
-            </p>
-          </div>
-          <Link href="/contact">
-            <a>Get in touch</a>
-          </Link>
-        </FootAction>
-        <section className="footer">
-          <div className="footNav">
-            <div className="logo">
-              <Link href="/">
-                <a>
-                  <Image src={logo} alt="logo" />
-                </a>
-              </Link>
-            </div>
+      <footer style={{ backgroundColor: "var(--black)" }}>
+        <Foot className="foot">
+          <FootAction className="footaction">
             <div>
-              <nav>
-                <Link href="/about">
-                  <a>Our company</a>
+              <h2>Let’s talk about your project</h2>
+              <p>
+                Ready to take it to the next level? Contact us today and find
+                out how our expertise can help your business grow.
+              </p>
+            </div>
+            <Link href="/contact">
+              <a>Get in touch</a>
+            </Link>
+          </FootAction>
+          <section className="footer">
+            <div className="footNav">
+              <div className="logo">
+                <Link href="/">
+                  <a>
+                    <Image src={logo} alt="logo" />
+                  </a>
                 </Link>
-                <Link href="/locations">
-                  <a>Locations</a>
-                </Link>
-                <Link href="/contact">
-                  <a>Contact</a>
-                </Link>
-              </nav>
+              </div>
+              <div>
+                <nav>
+                  <Link href="/about">
+                    <a>Our company</a>
+                  </Link>
+                  <Link href="/locations">
+                    <a>Locations</a>
+                  </Link>
+                  <Link href="/contact">
+                    <a>Contact</a>
+                  </Link>
+                </nav>
+              </div>
             </div>
-          </div>
-          <section className="dirCont">
-            {/* <section className="dirCont"> */}
-            <div className="direction">
-              <h3>Designo Central Office</h3>
-              <p>3886 Wellington Street</p>
-              <p>Toronto, Ontario M9C 3J5</p>
-            </div>
-            <div className="contact">
-              <h3>Contact Us (Central Office)</h3>
-              <p>P : +1 253-863-8967</p>
-              <p>M : contact@designo.co</p>
-            </div>
-            {/* </section> */}
-            <div className="socials">
-              <a href="http://">
-                <Image src={facebook} alt="facebook" width={24} height={24} />
-              </a>
-              <a href="http://">
-                <Image src={youtube} alt="youtube" width={24} height={24} />
-              </a>
-              <a href="http://">
-                <Image src={twitter} alt="twitter" width={24} height={24} />
-              </a>
-              <a href="http://">
-                <Image src={pinterest} alt="pinterest" width={24} height={24} />
-              </a>
-              <a href="http://">
-                <Image src={instagram} alt="instagram" width={24} height={24} />
-              </a>
-            </div>
+            <section className="dirCont">
+              {/* <section className="dirCont"> */}
+              <div className="direction">
+                <h3>Designo Central Office</h3>
+                <p>3886 Wellington Street</p>
+                <p>Toronto, Ontario M9C 3J5</p>
+              </div>
+              <div className="contact">
+                <h3>Contact Us (Central Office)</h3>
+                <p>P : +1 253-863-8967</p>
+                <p>M : contact@designo.co</p>
+              </div>
+              {/* </section> */}
+              <div className="socials">
+                <a href="http://">
+                  <Image src={facebook} alt="facebook" width={24} height={24} />
+                </a>
+                <a href="http://">
+                  <Image src={youtube} alt="youtube" width={24} height={24} />
+                </a>
+                <a href="http://">
+                  <Image src={twitter} alt="twitter" width={24} height={24} />
+                </a>
+                <a href="http://">
+                  <Image
+                    src={pinterest}
+                    alt="pinterest"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+                <a href="http://">
+                  <Image
+                    src={instagram}
+                    alt="instagram"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+              </div>
+            </section>
           </section>
-        </section>
-      </Foot>
+        </Foot>
+      </footer>
     </>
   );
 }

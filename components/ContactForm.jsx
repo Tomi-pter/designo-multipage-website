@@ -52,8 +52,26 @@ const ContactSect = styled(HeadSect)`
         margin: 0 0 1.5em;
       }
     }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
     button {
       align-self: flex-end;
+    }
+  }
+
+  @media screen and (min-width: 1008px) {
+    height: 480px;
+    article {
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      margin: auto;
+      gap: 6em;
+    }
+    .text {
+      max-width: 50%;
     }
   }
 `;
@@ -63,31 +81,35 @@ function ContactForm() {
     <>
       <ContactSect>
         <article>
-          <h1>Contact us</h1>
-          <p>
-            Ready to take it to the next level? Let’s talk about your project or
-            idea and find out how we can help your business grow. If you are
-            looking for unique digital experiences that’s relatable to your
-            users, drop us a line.
-          </p>
+          <div className="text">
+            <h1>Contact us</h1>
+            <p>
+              Ready to take it to the next level? Let’s talk about your project
+              or idea and find out how we can help your business grow. If you
+              are looking for unique digital experiences that’s relatable to
+              your users, drop us a line.
+            </p>
+          </div>
 
-          <form action="">
-            <input type="text" name="name" id="name" placeholder="Name" />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Address"
-            />
-            <input type="tel" name="phone" id="phone" placeholder="Phone" />
-            <textarea
-              name="placeholder"
-              id="placeholder"
-              rows="4"
-              placeholder="Your Message"
-            ></textarea>
-          </form>
-          <button>Submit</button>
+          <div className="form">
+            <form action="">
+              <input type="text" name="name" id="name" placeholder="Name" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address"
+              />
+              <input type="tel" name="phone" id="phone" placeholder="Phone" />
+              <textarea
+                name="placeholder"
+                id="placeholder"
+                rows="4"
+                placeholder="Your Message"
+              ></textarea>
+            </form>
+            <button>Submit</button>
+          </div>
         </article>
       </ContactSect>
       <ViewLocation />

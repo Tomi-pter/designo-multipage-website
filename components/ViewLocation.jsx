@@ -7,7 +7,7 @@ import { Trait } from "./Traits";
 import Link from "next/link";
 
 const AboutTrait = styled(Trait)`
-  margin: 7.5rem 0;
+  margin: 7.5rem auto;
 
   article {
     padding-bottom: 0;
@@ -41,6 +41,23 @@ const AboutTrait = styled(Trait)`
       max-width: 65%;
       text-align: center;
       padding-left: 0;
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: 1008px) {
+    margin: 16.5em 0;
+
+    article {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5em;
+      flex-direction: row;
+    }
+    .text {
+      max-width: 100%;
+      padding: 0;
+      text-align: center;
     }
   }
 `;
@@ -50,50 +67,56 @@ function ViewLocation() {
     <>
       <AboutTrait>
         <article>
-          <div className="traitDiv">
-            <Image
-              src={canada}
-              alt=""
-              className="traitImg"
-              width={188}
-              height={162}
-            />
+          <div>
+            <div className="traitDiv">
+              <Image
+                src={canada}
+                alt=""
+                className="traitImg"
+                width={188}
+                height={162}
+              />
+            </div>
+            <div className="text">
+              <h2>Canada</h2>
+              <Link href="/locations">
+                <a>See location</a>
+              </Link>
+            </div>
           </div>
-          <div className="text">
-            <h2>Canada</h2>
-            <Link href="/locations">
-              <a>See location</a>
-            </Link>
+          <div>
+            <div className="traitDiv">
+              <Image
+                src={australia}
+                alt=""
+                className="traitImg"
+                width={188}
+                height={162}
+              />
+            </div>
+            <div className="text">
+              <h2>Australia</h2>
+              <Link href="/locations">
+                <a>See location</a>
+              </Link>
+            </div>
           </div>
-          <div className="traitDiv">
-            <Image
-              src={australia}
-              alt=""
-              className="traitImg"
-              width={188}
-              height={162}
-            />
-          </div>
-          <div className="text">
-            <h2>Australia</h2>
-            <Link href="/locations">
-              <a>See location</a>
-            </Link>
-          </div>
-          <div className="traitDiv">
-            <Image
-              src={uk}
-              alt=""
-              className="traitImg"
-              width={188}
-              height={162}
-            />
-          </div>
-          <div className="text">
-            <h2>United Kingdom</h2>
-            <Link href="/locations">
-              <a>See location</a>
-            </Link>
+          <div>
+            <div className="traitDiv">
+              <Image
+                src={uk}
+                alt=""
+                className="traitImg"
+                width={188}
+                height={162}
+              />
+            </div>
+            <div className="text">
+              <h2>United Kingdom</h2>
+              <Link href="/locations">
+                <a>See location</a>
+              </Link>
+            </div>
           </div>
         </article>
       </AboutTrait>

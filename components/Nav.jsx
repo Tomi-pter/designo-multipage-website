@@ -45,6 +45,18 @@ const Navbar = styled.nav`
       display: unset;
     }
   }
+
+  @media screen and (min-width: 641px) {
+    max-width: 90%;
+    margin: 0 50%;
+    padding: 2.15rem 0;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (min-width: 1008px) {
+    max-width: 87.5%;
+    max-width: clamp(882px, 87.5%, 1440px);
+  }
 `;
 
 const NavItems = styled.div`

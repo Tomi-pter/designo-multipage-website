@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Services from "../components/Services";
-import WebDesign from "../components/WebDesign";
+import WebDesign, { ServicesContainer } from "../components/WebDesign";
 
 function Web() {
   useEffect(() => {
-    document.querySelector(".footaction").style.display = "unset";
+    document.querySelector(".footaction").style.display = "inherit";
     document.querySelector(".foot").style.marginTop = "19.5em";
     document.querySelector(".footer").style.paddingTop = "16rem";
   }, []);
@@ -12,8 +12,10 @@ function Web() {
   return (
     <>
       <WebDesign />
-      <Services specific={"app"} />
-      <Services specific={"graphic"} />
+      <ServicesContainer>
+        <Services specific={"app"} />
+        <Services specific={"graphic"} />
+      </ServicesContainer>
     </>
   );
 }

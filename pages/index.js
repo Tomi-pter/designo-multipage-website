@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import HomeComp from "../components/HomeComp";
 import Services from "../components/Services";
+import ServicesSect from "../components/ServicesSect";
 import Traits from "../components/Traits";
 
 const New = styled.div`
@@ -12,7 +13,7 @@ const New = styled.div`
 
 export default function Home() {
   useEffect(() => {
-    document.querySelector(".footaction").style.display = "unset";
+    document.querySelector(".footaction").style.display = "inherit";
     document.querySelector(".foot").style.marginTop = "15.5em";
     document.querySelector(".footer").style.paddingTop = "16rem";
   }, []);
@@ -26,13 +27,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <HomeComp />
+      <HomeComp />
+      <ServicesSect>
         <Services specific={"web"} />
         <Services specific={"app"} />
         <Services specific={"graphic"} />
-        <Traits />
-      </main>
+      </ServicesSect>
+      <Traits />
     </>
   );
 }

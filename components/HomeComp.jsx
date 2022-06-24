@@ -51,6 +51,21 @@ const Frame = styled.section`
       padding: 3em 0 0;
     }
   }
+
+  @media screen and (min-width: 1008px) {
+    height: 640px;
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+
+    .text {
+      text-align: left;
+      max-width: 350px;
+      padding: 0;
+      margin: 0 5em;
+      /* transform: translateY(-25%); */
+    }
+  }
 `;
 
 function HomeComp() {
