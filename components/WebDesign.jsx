@@ -45,6 +45,16 @@ export const WorksSect = styled(LightSect)`
   max-width: 87.5%;
   margin: 2.5em auto;
   overflow: hidden;
+  cursor: pointer;
+
+  :hover {
+    background: var(--peach);
+
+    h2,
+    p {
+      color: var(--white);
+    }
+  }
 
   article {
     padding: 1em 0 2em;

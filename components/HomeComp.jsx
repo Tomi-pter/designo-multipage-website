@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import phone from "../public/assets/frame.svg";
 
 const Frame = styled.section`
@@ -17,6 +18,7 @@ const Frame = styled.section`
     text-align: center;
     padding: 5rem 0 0;
     max-width: 87.5%;
+    z-index: 5;
   }
   & h1 {
     font-family: "JostMedium";
@@ -40,6 +42,11 @@ const Frame = styled.section`
     border: none;
     border-radius: 0.5rem;
     padding: 1.125em 1.5em;
+
+    :hover {
+      color: var(--white);
+      background-color: var(--light-peach);
+    }
   }
 
   @media screen and (min-width: 641px) {
@@ -69,6 +76,18 @@ const Frame = styled.section`
 `;
 
 function HomeComp() {
+  const animateValue = () => {
+    let setTop;
+
+    document.documentElement.clientWidth > 1007
+      ? (setTop = { top: ["22%", "23%"] })
+      : (setTop = { top: ["20rem", "21rem"] });
+
+    console.log(setTop);
+
+    return setTop;
+  };
+
   return (
     <>
       <Frame>
@@ -83,7 +102,16 @@ function HomeComp() {
             <a>Learn more</a>
           </Link>
         </div>
-        <div className="frame">
+        <motion.div
+          className="frame"
+          // animate={() => animateValue()}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            duration: 0.3,
+            yoyo: Infinity,
+          }}
+        >
           <Image
             src={phone}
             alt=""
@@ -91,7 +119,7 @@ function HomeComp() {
             priority
             className="frameImg"
           />
-        </div>
+        </motion.div>
       </Frame>
     </>
   );

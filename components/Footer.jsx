@@ -41,6 +41,23 @@ const Foot = styled.section`
       margin: 1.75em 0;
       color: var(--white);
       display: block;
+      position: relative;
+    }
+    a::after {
+      background-color: var(--white);
+      bottom: -2px;
+      content: "";
+      height: 1px;
+      left: 0px;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.3s ease 0s;
+      width: 100%;
+    }
+    a:hover::after,
+    a:focus::after {
+      transform: scaleX(1);
+      transform-origin: center;
     }
   }
   .dirCont {
@@ -67,10 +84,13 @@ const Foot = styled.section`
     a {
       margin: 0 0.5rem;
     }
+    a:hover {
+      transform: scale(1.1);
+    }
   }
 
   @media screen and (min-width: 641px) {
-    max-width: 90%;
+    max-width: 91%;
     margin: 14.5em auto 0;
     padding: 2.15rem 0;
 
@@ -86,8 +106,8 @@ const Foot = styled.section`
       border-top: none;
       padding-bottom: 1.5em;
       a {
-        padding: 0 1em;
-        margin: 0;
+        padding: 0;
+        margin: 0 1em;
       }
     }
     .dirCont {
@@ -103,8 +123,8 @@ const Foot = styled.section`
   @media screen and (min-width: 1008px) {
     display: flex;
     flex-direction: column;
-    max-width: 87.5%;
-    max-width: clamp(882px, 87.5%, 1440px);
+    max-width: 88.5%;
+    max-width: clamp(884px, 88.5%, 1440px);
   }
 `;
 
@@ -151,6 +171,11 @@ const FootAction = styled.aside`
     border-radius: 0.5rem;
     padding: 1.125em 1.5em;
     margin: 2em 0 4em;
+
+    :hover {
+      color: var(--white);
+      background-color: var(--light-peach);
+    }
   }
 
   @media screen and (min-width: 641px) {

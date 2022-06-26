@@ -38,7 +38,24 @@ const Navbar = styled.nav`
 
     a {
       color: var(--dark-grey);
-      padding: 0 1em;
+      margin: 0 1em;
+      position: relative;
+    }
+    a::after {
+      background-color: var(--black);
+      bottom: -4px;
+      content: "";
+      height: 1px;
+      left: 0px;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.3s ease 0s;
+      width: 100%;
+    }
+    a:hover::after,
+    a:focus::after {
+      transform: scaleX(1);
+      transform-origin: center;
     }
 
     @media screen and (min-width: 641px) {
@@ -47,15 +64,16 @@ const Navbar = styled.nav`
   }
 
   @media screen and (min-width: 641px) {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 50%;
-    padding: 2.15rem 0;
+    padding: 2.15rem 5%;
     transform: translateX(-50%);
   }
 
   @media screen and (min-width: 1008px) {
-    max-width: 87.5%;
-    max-width: clamp(882px, 87.5%, 1440px);
+    padding: 2.15rem 5.75%;
+    /* max-width: 88.5%;
+    max-width: clamp(884px, 88.5%, 1440px); */
   }
 `;
 
@@ -111,6 +129,7 @@ const NavItems = styled.div`
     padding-left: 1em;
     transition: opacity 200ms cubic-bezier(0.59, 0, 0.49, 1);
   }
+
   .navMobile.clicked {
     height: 235px;
     background-color: var(--black);
@@ -153,17 +172,24 @@ function Nav({ children }) {
     setOpened(false);
   };
 
+  const linkClicked = () => {
+    document.querySelector(".navMobile").classList.remove("clicked");
+    document.querySelector(".dim").classList.remove("clicked");
+
+    setOpened(false);
+  };
+
   const navs = (
     <>
       <Link href="/about">
-        <a>Our company</a>
+        <a onClick={linkClicked}>Our company</a>
       </Link>
       <Link href="/locations">
-        <a>Locations</a>
+        <a onClick={linkClicked}>Locations</a>
       </Link>
       <Link href="/contact">
-        <a>Contact</a>
-      </Link>{" "}
+        <a onClick={linkClicked}>Contact</a>
+      </Link>
     </>
   );
 
@@ -171,7 +197,7 @@ function Nav({ children }) {
     <>
       <Navbar>
         <Link href="/">
-          <a>
+          <a onClick={linkClicked}>
             <Image src={logo} alt="logo" />
           </a>
         </Link>
@@ -181,7 +207,7 @@ function Nav({ children }) {
         <div className="navlinks">{navs}</div>
       </Navbar>
       <NavItems>
-        <div className="dim"></div>
+        <div className="dim" onClick={linkClicked}></div>
         <div className="navMobile">{navs}</div>
       </NavItems>
       <Space />

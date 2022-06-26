@@ -15,9 +15,6 @@ const AboutTrait = styled(Trait)`
   .text {
     padding-bottom: 3em;
   }
-  .text:last-child {
-    padding-bottom: 0;
-  }
 
   button,
   a {
@@ -29,6 +26,10 @@ const AboutTrait = styled(Trait)`
     border: none;
     border-radius: 0.5rem;
     padding: 1.125em 1.5em;
+
+    :hover {
+      background-color: #ffad9b;
+    }
   }
 
   @media screen and (min-width: 641px) {
@@ -38,21 +39,26 @@ const AboutTrait = styled(Trait)`
       justify-content: center;
     }
     .text {
-      max-width: 65%;
+      max-width: 100%;
       text-align: center;
       padding-left: 0;
       margin: auto;
     }
+    .text:last-child {
+      padding-bottom: 3em;
+    }
   }
 
   @media screen and (min-width: 1008px) {
-    margin: 16.5em 0;
+    margin: 16.5em auto;
+    max-width: 85%;
 
     article {
       display: flex;
       justify-content: space-between;
       gap: 1.5em;
       flex-direction: row;
+      width: 100%;
     }
     .text {
       max-width: 100%;

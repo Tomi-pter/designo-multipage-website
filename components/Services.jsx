@@ -18,6 +18,10 @@ export const ServiceSection = styled.section`
     font-family: "JostMedium";
     color: var(--white);
 
+    :hover {
+      background: hsl(11, 73%, 66%, 0.5);
+    }
+
     h2 {
       font-size: 1.75em;
       margin: 0;
