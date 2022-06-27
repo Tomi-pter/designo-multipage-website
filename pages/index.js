@@ -1,15 +1,31 @@
 import Head from "next/head";
 import { useEffect } from "react";
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 import HomeComp from "../components/HomeComp";
 import Services from "../components/Services";
 import ServicesSect from "../components/ServicesSect";
 import Traits from "../components/Traits";
 
-const New = styled.div`
-  color: var(--peach);
-  font-family: "JostMedium";
-`;
+export const containerVariants = {
+  initial: {
+    opacity: 0,
+    // x: "100vw",
+  },
+  animation: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", delay: 0.5, duration: 0.5 },
+  },
+  exit: {
+    opacity: 0,
+    // x: "-100vw",
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+};
 
 export default function Home() {
   useEffect(() => {
@@ -19,7 +35,13 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <motion.div
+      variants={containerVariants}
+      initial="initail"
+      animate="animation"
+      exit="exit"
+      key="index"
+    >
       <Head>
         <title>Designo Agency Website | Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,6 +56,6 @@ export default function Home() {
         <Services specific={"graphic"} />
       </ServicesSect>
       <Traits />
-    </>
+    </motion.div>
   );
 }

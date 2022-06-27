@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Location from "../components/Location";
+import { containerVariants } from ".";
 
 function Locations() {
   useEffect(() => {
@@ -9,9 +11,14 @@ function Locations() {
   }, []);
 
   return (
-    <>
+    <motion.div
+      variants={containerVariants}
+      initial="initial"
+      animate="animation"
+      exit="exit"
+    >
       <Location />
-    </>
+    </motion.div>
   );
 }
 

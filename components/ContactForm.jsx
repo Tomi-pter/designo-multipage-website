@@ -27,6 +27,9 @@ const ContactSect = styled(HeadSect)`
     textarea::placeholder {
       color: rgba(255, 255, 255, 0.5);
     }
+    textarea {
+      resize: none;
+    }
   }
 
   button {
@@ -39,6 +42,11 @@ const ContactSect = styled(HeadSect)`
     border-radius: 0.5rem;
     padding: 0.75em 1em;
     width: 150px;
+
+    :hover {
+      color: var(--white);
+      background-color: var(--light-peach);
+    }
   }
 
   @media screen and (min-width: 641px) {

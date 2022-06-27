@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import AboutComp from "../components/AboutComp";
+import { motion, AnimatePresence } from "framer-motion";
+import { containerVariants } from ".";
 
 function About() {
   useEffect(() => {
@@ -9,9 +11,15 @@ function About() {
   }, []);
 
   return (
-    <>
+    <motion.div
+      variants={containerVariants}
+      initial="initial"
+      animate="animation"
+      exit="exit"
+      key="about"
+    >
       <AboutComp />
-    </>
+    </motion.div>
   );
 }
 
