@@ -9,6 +9,7 @@ import worldDesk from "../public/assets/svg/worldDesk.svg";
 import real from "../public/assets/svg/real.svg";
 import realTab from "../public/assets/svg/realTab.svg";
 import realDesk from "../public/assets/svg/realDesk.svg";
+import blurAbout from "../public/assets/about/desktop/image-about-hero.jpg";
 import ViewLocation from "./ViewLocation";
 
 const PeachSect = styled.section`
@@ -118,7 +119,14 @@ function AboutComp() {
     <>
       <PeachSect>
         <div className="img mob">
-          <Image src={aboutImgMob} alt="" layout="responsive" />
+          <Image
+            src={aboutImgMob}
+            alt=""
+            layout="responsive"
+            priority
+            placeholder="blur"
+            blurDataURL={blurAbout}
+          />
         </div>
         <div className="img tab">
           <Image src={aboutTab} alt="" layout="responsive" />

@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import phone from "../public/assets/frame.svg";
 
 const Frame = styled.section`
-  background-color: var(--peach);
+  background: var(--peach) url("/assets/home/desktop/bg-pattern-hero-home.svg")
+    no-repeat right;
   height: 843px;
   overflow: hidden;
   margin: 5em 0 7.5em;
@@ -43,7 +44,8 @@ const Frame = styled.section`
     border-radius: 0.5rem;
     padding: 1.125em 1.5em;
 
-    :hover {
+    :hover,
+    :focus {
       color: var(--white);
       background-color: var(--light-peach);
     }

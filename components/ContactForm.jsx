@@ -51,7 +51,8 @@ const ContactSect = styled(HeadSect)`
     padding: 0.75em 1em;
     width: 150px;
 
-    :hover {
+    :hover,
+    :focus {
       color: var(--white);
       background-color: var(--light-peach);
     }
@@ -120,7 +121,7 @@ function ContactForm() {
   const [msgError, setMsgError] = useState("");
 
   const validateName = (e) => {
-    if (e.target.value?.length < 2) {
+    if (e.target.value?.length < 1) {
       setErrors(`Can't be empty`);
       return false;
     } else {
@@ -188,13 +189,14 @@ function ContactForm() {
           </div>
 
           <div className="form">
-            <form action="">
+            <form action="/contact" id="myform" onSubmit={submit}>
               <div className="inputDiv">
                 <input
                   type="text"
                   name="name"
                   id="name"
                   placeholder="Name"
+                  onChange={validateName}
                   onBlur={validateName}
                 />
                 <p>
@@ -209,6 +211,7 @@ function ContactForm() {
                   id="email"
                   placeholder="Email Address"
                   onBlur={validateMail}
+                  onChange={validateMail}
                 />
                 <p>
                   {mailError}
@@ -222,6 +225,7 @@ function ContactForm() {
                   id="phone"
                   placeholder="Phone"
                   onBlur={validatePhone}
+                  onChange={validatePhone}
                 />
                 <p>
                   {phoneError}
@@ -235,6 +239,7 @@ function ContactForm() {
                   rows="4"
                   placeholder="Your Message"
                   onBlur={validateText}
+                  onChange={validateText}
                 ></textarea>
                 <p>
                   {msgError}
@@ -242,7 +247,7 @@ function ContactForm() {
                 </p>
               </div>
             </form>
-            <button onSubmit={submit}>Submit</button>
+            <button form="myform">Submit</button>
           </div>
         </article>
       </ContactSect>

@@ -27,7 +27,8 @@ const AboutTrait = styled(Trait)`
     border-radius: 0.5rem;
     padding: 1.125em 1.5em;
 
-    :hover {
+    :hover,
+    :focus {
       background-color: #ffad9b;
     }
   }

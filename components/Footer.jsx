@@ -84,8 +84,10 @@ const Foot = styled.section`
     a {
       margin: 0 0.5rem;
     }
-    a:hover {
+    a:hover,
+    a:focus {
       transform: scale(1.1);
+      filter: contrast(0.5) brightness(1.5);
     }
   }
 
@@ -135,7 +137,8 @@ const FootAction = styled.aside`
   border-radius: 1em;
   overflow: hidden;
   color: var(--white);
-  background: var(--peach);
+  background: var(--peach) url("assets/home/desktop/bg-pattern-hero-home.svg")
+    top right;
   position: absolute;
   top: -13em;
   left: 50%;
@@ -172,7 +175,8 @@ const FootAction = styled.aside`
     padding: 1.125em 1.5em;
     margin: 2em 0 4em;
 
-    :hover {
+    :hover,
+    :focus {
       color: var(--white);
       background-color: var(--light-peach);
     }
@@ -263,16 +267,16 @@ function Footer({ children }) {
               </div>
               {/* </section> */}
               <div className="socials">
-                <a href="http://">
+                <a href="https://facebook.com">
                   <Image src={facebook} alt="facebook" width={24} height={24} />
                 </a>
-                <a href="http://">
+                <a href="https://youtube.com">
                   <Image src={youtube} alt="youtube" width={24} height={24} />
                 </a>
-                <a href="http://">
+                <a href="https://twitter.com">
                   <Image src={twitter} alt="twitter" width={24} height={24} />
                 </a>
-                <a href="http://">
+                <a href="https://pinterest.com">
                   <Image
                     src={pinterest}
                     alt="pinterest"
@@ -280,7 +284,7 @@ function Footer({ children }) {
                     height={24}
                   />
                 </a>
-                <a href="http://">
+                <a href="https://instagram.com">
                   <Image
                     src={instagram}
                     alt="instagram"

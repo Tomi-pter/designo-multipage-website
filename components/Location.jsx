@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { LightSect } from "./AboutComp";
-import canada from "../public/assets/locations/desktop/image-map-canada.png";
-import australia from "../public/assets/locations/desktop/image-map-australia.png";
-import uk from "../public/assets/locations/desktop/image-map-united-kingdom.png";
+import canada from "../public/assets/svg/canadaDesk.svg";
+import australia from "../public/assets/svg/australiaDesk.svg";
+import uk from "../public/assets/svg/ukDesk.svg";
 
 const LocationSect = styled(LightSect)`
   h3 {
