@@ -55,5 +55,5 @@ Next.js and Framer-motion.
 
 ## Author
 
-- Website - [Add your name here](https://www.tomipter.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Tomi-pter)
+- Website - [Tomipter](https://www.tomipter.com)
+- Frontend Mentor - [@Tomi-pter](https://www.frontendmentor.io/profile/Tomi-pter)
