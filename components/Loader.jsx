@@ -64,7 +64,7 @@ export const backdropVariant = {
     y: "-100vh",
     opacity: 0,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
