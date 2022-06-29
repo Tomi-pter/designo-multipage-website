@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 // import { v4 as uuidv4 } from "uuid";
 import "../styles/globals.css";
@@ -11,11 +11,9 @@ import { containerVariants } from ".";
 function MyApp({ Component, pageProps, router }) {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3250);
-  }, []);
+  setTimeout(() => {
+    setLoading(false);
+  }, 3250);
 
   return (
     <AnimatePresence>
