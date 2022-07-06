@@ -127,7 +127,7 @@ const NavItems = styled.div`
     margin: 0;
     opacity: 0;
     padding-left: 1em;
-    transition: opacity 200ms cubic-bezier(0.59, 0, 0.49, 1);
+    transition: opacity 0ms cubic-bezier(0.59, 0, 0.49, 1);
   }
 
   .navMobile.clicked {
@@ -172,23 +172,16 @@ function Nav({ children }) {
     setOpened(false);
   };
 
-  const linkClicked = () => {
-    document.querySelector(".navMobile").classList.remove("clicked");
-    document.querySelector(".dim").classList.remove("clicked");
-
-    setOpened(false);
-  };
-
   const navs = (
     <>
       <Link href="/about">
-        <a onClick={linkClicked}>Our company</a>
+        <a onClick={closeNav}>Our company</a>
       </Link>
       <Link href="/locations">
-        <a onClick={linkClicked}>Locations</a>
+        <a onClick={closeNav}>Locations</a>
       </Link>
       <Link href="/contact">
-        <a onClick={linkClicked}>Contact</a>
+        <a onClick={closeNav}>Contact</a>
       </Link>
     </>
   );
@@ -197,7 +190,7 @@ function Nav({ children }) {
     <>
       <Navbar>
         <Link href="/">
-          <a onClick={linkClicked}>
+          <a onClick={closeNav}>
             <Image src={logo} alt="logo" />
           </a>
         </Link>
@@ -207,7 +200,7 @@ function Nav({ children }) {
         <div className="navlinks">{navs}</div>
       </Navbar>
       <NavItems>
-        <div className="dim" onClick={linkClicked}></div>
+        <div className="dim" onClick={closeNav}></div>
         <div className="navMobile">{navs}</div>
       </NavItems>
       <Space />
