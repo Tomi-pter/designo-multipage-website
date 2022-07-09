@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import styled from "styled-components";
 import ViewLocation from "./ViewLocation";
@@ -115,6 +116,13 @@ const ContactSect = styled(HeadSect)`
 `;
 
 function ContactForm() {
+  const { ref: contactRef, inView: isVisible } = useInView();
+
+  isVisible &&
+    (document?.querySelector(".footaction")?.classList?.add("contactPage"),
+    document?.querySelector(".foot")?.classList?.add("contactPage"),
+    document?.querySelector(".footer")?.classList?.add("contactPage"));
+
   const [errors, setErrors] = useState("");
   const [mailError, setMailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
@@ -175,7 +183,7 @@ function ContactForm() {
   };
 
   return (
-    <>
+    <section ref={contactRef}>
       <ContactSect>
         <article>
           <div className="text">
@@ -252,7 +260,7 @@ function ContactForm() {
         </article>
       </ContactSect>
       <ViewLocation />
-    </>
+    </section>
   );
 }
 

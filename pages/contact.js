@@ -1,13 +1,10 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import ContactForm from "../components/ContactForm";
 
 function Contact() {
-  useEffect(() => {
-    document.querySelector(".footaction").style.display = "none";
-    document.querySelector(".foot").style.marginTop = 0;
-    document.querySelector(".footer").style.paddingTop = "4rem";
-  }, []);
+  // document.querySelector(".footaction").classList.toggle('contactPage')
+  // document.querySelector(".foot").classList.toggle('contactPage')
+  // document.querySelector(".footer").classList.toggle('contactPage')
 
   return (
     <>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import logo from "../public/assets/logo-dark.svg";
@@ -15,11 +14,18 @@ const Foot = styled.section`
   background-color: var(--black);
   position: relative;
 
+  &.contactPage {
+    margin-top: 0;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
     padding: 16rem 1.5rem 0;
     color: var(--white);
+  }
+  .footer.contactPage {
+    padding: 4rem 1.5rem 0;
   }
   .footNav {
     display: flex;
@@ -134,6 +140,7 @@ const Foot = styled.section`
 
 const FootAction = styled.aside`
   /* display: ${(props) => (props.contact ? "none" : "unset")}; */
+  display: unset;
   margin: 0;
   width: 90%;
   border-radius: 1em;
@@ -146,6 +153,10 @@ const FootAction = styled.aside`
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+
+  &.contactPage {
+    display: none;
+  }
 
   div {
     padding: 4em 0 0.5em;
@@ -248,7 +259,6 @@ function Footer({ children }) {
 
   !isVisible &&
     document?.querySelector("nav")?.classList?.remove("footVisible");
-  console.log(isVisible);
 
   // const footRef = useRef();
   // const [isVisible, setIsVisible] = useState();
@@ -276,7 +286,7 @@ function Footer({ children }) {
               </p>
             </div>
             <Link href="/contact">
-              <a ref={linkRef} className={`${linkVisible && "link"}`}>
+              <a ref={linkRef} className={`${linkVisible ? "link" : " "}`}>
                 Get in touch
               </a>
             </Link>
