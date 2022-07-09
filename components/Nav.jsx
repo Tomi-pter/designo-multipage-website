@@ -13,9 +13,16 @@ const Navbar = styled.nav`
   padding: 2.15rem 1.5rem;
   width: 100vw;
   background-color: var(--white);
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: -1px;
   z-index: 999;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.025);
+  opacity: 1;
+  transition: opacity 500ms ease;
+
+  &.footVisible {
+    opacity: 0;
+  }
 
   button {
     appearance: none;
@@ -145,14 +152,6 @@ const NavItems = styled.div`
   }
 `;
 
-const Space = styled.div`
-  margin: 95px 0 0;
-
-  @media screen and (min-width: 641px) {
-    padding: 0.025em 0;
-  }
-`;
-
 function Nav({ children }) {
   const [opened, setOpened] = useState(false);
 
@@ -203,7 +202,6 @@ function Nav({ children }) {
         <div className="dim" onClick={closeNav}></div>
         <div className="navMobile">{navs}</div>
       </NavItems>
-      <Space />
       {children}
     </>
   );

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useRef, useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import logo from "../public/assets/logo-dark.svg";
 import facebook from "../public/assets/shared/desktop/icon-facebook.svg";
@@ -182,6 +184,32 @@ const FootAction = styled.aside`
     }
   }
 
+  .link {
+    animation: shake-it 1.5s;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+  }
+
+  @keyframes shake-it {
+    10%,
+    90% {
+      transform: translate3d(0, -1px, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(0, 2px, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(0, -4px, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(0, 4px, 0);
+    }
+  }
+
   @media screen and (min-width: 641px) {
     top: -7em;
 
@@ -213,6 +241,27 @@ const FootAction = styled.aside`
 `;
 
 function Footer({ children }) {
+  const { ref: footRef, inView: isVisible } = useInView();
+  const { ref: linkRef, inView: linkVisible } = useInView();
+
+  isVisible && document?.querySelector("nav")?.classList?.add("footVisible");
+
+  !isVisible &&
+    document?.querySelector("nav")?.classList?.remove("footVisible");
+  console.log(isVisible);
+
+  // const footRef = useRef();
+  // const [isVisible, setIsVisible] = useState();
+  // console.log(isVisible);
+  // useEffect(() => {
+  //   // console.log(footRef.current);
+  //   const footObserver = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     setIsVisible(entry.isIntersecting);
+  //   });
+  //   footObserver.observe(footRef.current);
+  // }, []);
+
   return (
     <>
       {children}
@@ -227,11 +276,13 @@ function Footer({ children }) {
               </p>
             </div>
             <Link href="/contact">
-              <a>Get in touch</a>
+              <a ref={linkRef} className={`${linkVisible && "link"}`}>
+                Get in touch
+              </a>
             </Link>
           </FootAction>
           <section className="footer">
-            <div className="footNav">
+            <div className="footNav" ref={footRef}>
               <div className="logo">
                 <Link href="/">
                   <a>

@@ -9,7 +9,7 @@ const Frame = styled.section`
     no-repeat right;
   height: 843px;
   overflow: hidden;
-  margin: 5em 0 7.5em;
+  margin: 0 0 7.5em;
   position: relative;
   display: flex;
   justify-content: center;
