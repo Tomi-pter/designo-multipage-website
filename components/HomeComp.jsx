@@ -119,6 +119,8 @@ function HomeComp() {
             alt=""
             // layout="responsive"
             priority
+            placeholder="blur"
+            blurDataURL={"/assets/home/desktop/image-hero-phone.png"}
             className="frameImg"
           />
         </motion.div>

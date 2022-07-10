@@ -9,7 +9,6 @@ import worldDesk from "../public/assets/svg/worldDesk.svg";
 import real from "../public/assets/svg/real.svg";
 import realTab from "../public/assets/svg/realTab.svg";
 import realDesk from "../public/assets/svg/realDesk.svg";
-import blurAbout from "../public/assets/about/desktop/image-about-hero.jpg";
 import ViewLocation from "./ViewLocation";
 
 const PeachSect = styled.section`
@@ -125,7 +124,7 @@ function AboutComp() {
             layout="responsive"
             priority
             placeholder="blur"
-            blurDataURL={blurAbout}
+            blurDataURL={"/assets/about/desktop/image-about-hero.jpg"}
           />
         </div>
         <div className="img tab">
